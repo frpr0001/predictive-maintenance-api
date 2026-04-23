@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="Intelligent IoT Solutions – Predictive Maintenance API - Nu prøver vi endnu engang",
+    title="Intelligent IoT Solutions – Predictive Maintenance API - wup wup nu skal vi have øl :)",
     description="REST API Microservice til modtagelse af sensordata og detektion af anomalier.",
     version="1.0.0"
 )
