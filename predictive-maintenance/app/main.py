@@ -15,7 +15,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-DB_PATH = "data/events.db"
+DB_PATH = "/app/data/events.db"
 
 # --- Threshold config ---
 THRESHOLDS = {
@@ -44,7 +44,7 @@ class SensorResponse(BaseModel):
 # --- DB helpers ---
 def get_db():
     import os
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("/app/data", exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
