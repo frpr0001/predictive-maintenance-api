@@ -9,11 +9,18 @@ os.environ["TESTING"] = "1"
 from app.main import app, DB_PATH
 import app.main as main_module
 
-# Overskriv DB_PATH til test-database
-main_module.DB_PATH = ":memory:"
+# Overskriv DB_PATH til en fysisk test-database
+TEST_DB_PATH = "data/test_events.db"
+main_module.DB_PATH = TEST_DB_PATH
+
+# Sørg for at vi starter med en helt ren database
+if os.path.exists(TEST_DB_PATH):
+    os.remove(TEST_DB_PATH)
+
+# Initialiser tabellerne manuelt før TestClient startes
+main_module.init_db()
 
 client = TestClient(app)
-
 def test_health():
     r = client.get("/health")
     assert r.status_code == 200
