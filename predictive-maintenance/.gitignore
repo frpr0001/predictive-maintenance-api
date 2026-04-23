@@ -118,7 +118,7 @@ Thumbs.db
 
 # Database
 events.db/
-*.db
+# *.db
 
 # Logs
 *.log
