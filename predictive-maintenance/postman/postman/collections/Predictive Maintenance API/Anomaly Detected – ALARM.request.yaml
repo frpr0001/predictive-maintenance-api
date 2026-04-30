@@ -1,0 +1,5 @@
+$kind: http-request
+name: Anomaly Detected – ALARM
+url: ""
+method: GET
+order: 4469222029791983
